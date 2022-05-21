@@ -31,8 +31,8 @@ resource "aws_dynamodb_table_item" "dynamoUsers" {
   item = <<EOF
 {
   "id": {"S": "12345"},
-  "email" : {"S": "mal@auradon.kingdom" },
-  "name" : {"S": "Mal" }
+  "email" : {"S": "useremail@test.com" },
+  "name" : {"S": "user1" }
 }
 EOF
 }

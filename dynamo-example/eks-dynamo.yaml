@@ -22,7 +22,7 @@ spec:
       #serviceAccountName: dynamo-users
       containers:
       - name: eks-dynamo
-        image: 188966951897.dkr.ecr.us-west-2.amazonaws.com/vallard/eks-dynamo:latest
+        image: 041835826865.dkr.ecr.us-west-2.amazonaws.com/mehkey/eks-dynamo:latest
         ports: 
           - containerPort: 80
         env:
@@ -49,22 +49,22 @@ spec:
   selector:
     run: eks-dynamo
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
-metadata:
-  annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-prod
-    kubernetes.io/ingress.class: nginx
-  name: eks-dynamo
-spec:
-  tls:
-  - hosts:
-    - dynamo.k8s.castlerock.ai
-    secretName: eks-dynamo-tls-cert
-  rules:
-    - host: dynamo.k8s.castlerock.ai
-      http:
-        paths:
-        - backend:
-            serviceName: eks-dynamo
-            servicePort: 80
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  annotations:
+    #cert-manager.io/cluster-issuer: letsencrypt-prod
+#    kubernetes.io/ingress.class: nginx
+#  name: eks-dynamo
+#spec:
+  #tls:
+  #- hosts:
+  #  - dynamo.k8s.castlerock.ai
+  #  secretName: eks-dynamo-tls-cert
+  #rules:
+  #  - host: dynamo.k8s.mehkey.com
+  #    http:
+  #      paths:
+  #      - backend:
+  #          serviceName: eks-dynamo
+  #          servicePort: 80
