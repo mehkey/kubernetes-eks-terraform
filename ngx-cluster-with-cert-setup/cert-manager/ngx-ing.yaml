@@ -9,10 +9,10 @@ metadata:
 spec:
   tls:
   - hosts:
-    - k8s.castlerock.ai
+    - demo.mehkey.com
     secretName: ngx-tls-cert
   rules:
-    - host: k8s.castlerock.ai
+    - host: demo.mehkey.com
       http:
         paths:
         - backend:
